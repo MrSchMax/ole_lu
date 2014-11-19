@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <title>OleLu</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-
+  <script charset="utf-8">
+    jQuery(function ($) {
+                $('.hyphenate').hyphenate('ru');
+            });
+  </script>
 </head>
 <body>
 
