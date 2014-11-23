@@ -1,10 +1,23 @@
-.tour-widget
-  .image
-    img src="/assets/img01.jpg"
-    .price 15 350 РУБ
-  .description
-    h2 Вокруг света за один день
-    / p Экскурсионная Беларусь — это заповедный напев Беловежской пущи, Живописное Поместье Деда Мороза, величественный замок в Мире, всемирно известные мемориалы в Хатыни и Брестской.
-    p.hyphenate lang="ru" Искусство медиапланирования, отбрасывая подробности, детерминирует ребрендинг. Пакшот, безусловно, вполне вероятен. Интересно отметить, что направленный маркетинг позитивно отталкивает фирменный стиль. Адекватная ментальность изменяет типичный выставочный стенд.
-  .actions
-    .button
+
+.tours-section
+  .tours
+    tour-widget
+    tour-widget
+    tour-widget
+    tour-widget
+    tour-widget
+    tour-widget
+    tour-widget
+    tour-widget
+    tour-widget
+  .pagination
+    span назад
+    span 1
+    span …
+    span 3
+    span.current 4
+    span 5
+    span 6
+    span …
+    span 10
+    span вперёд
