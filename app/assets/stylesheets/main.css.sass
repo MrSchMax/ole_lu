@@ -35,37 +35,23 @@ $no-shadow: 0px 0px 0px transparent
 
 body
   background: $main-body-bg-color
+  font-family: Lato
 
-.to-left
-  float: left
-.to-right
-  float: right
+$tours-horizontal-gaps: 40px
+$tours-vertical-gaps: 30px
+$tour-width: 290px
+$tour-height: 395px
 
 .card
   background: $main-card-bg-color
   +box-shadow($main-shadow)
 
-
-$tours-horizontal-gaps: 40px
-$tours-vertical-gaps: 30px
-
-.tours-section
-  width: 950px
-  margin: auto
-  margin-top: 25px
-  margin-bottom: 40px
-
-.tours
-  +inline-block()
-  margin: (-$tours-vertical-gaps/2) (-$tours-horizontal-gaps/2)
-
-
-
 .tour-widget
   @extend .card
-  +inline-block()
-  width: 290px
-  margin: $tours-vertical-gaps/2 $tours-horizontal-gaps/2
+
+  +display-flex
+  +flex-direction(column)
+  width: $tour-width
 
   .image
     position: relative
@@ -73,22 +59,22 @@ $tours-vertical-gaps: 30px
     height: 160px
     overflow: hidden
 
-  img
-    width: 100%
-    margin-top: -10%
+    img
+      width: 100%
+      margin-top: -10%
 
-  .price
-    position: absolute
-    right: 0
-    bottom: 0
-    min-width: 120px
-    text-align: center
-    background: rgba($main-neutral-color,0.85)
-    font-family: Lato-Italic
-    font-size: 16px
-    color: $main-light-text-color
-    line-height: 19px
-    padding: 3px 8px
+    .price
+      position: absolute
+      right: 0
+      bottom: 0
+      min-width: 120px
+      text-align: center
+      background: rgba($main-neutral-color,0.85)
+      font-family: Lato-Italic
+      font-size: 16px
+      color: $main-light-text-color
+      line-height: 19px
+      padding: 3px 8px
 
   .description
     width: 100%
@@ -96,7 +82,9 @@ $tours-vertical-gaps: 30px
     padding: 5px 15px
 
     h2
-      font-family: Lato-HeavyItalic
+      font-family: Lato
+      font-weight: 900
+      font-style: italic
       text-transform: uppercase
       font-size: 16px
       color: $main-dark-text-color
@@ -114,11 +102,15 @@ $tours-vertical-gaps: 30px
       height: 154px
       text-align: justify
       +ellipsis(false)
-
   .actions
     width: 100%
-    height: 35px
-    padding: 5px 15px 5px 15px
+    // height: 35px
+    padding: 5px 15px 8px 15px
+
+    +display-flex
+    +flex-direction(row)
+    +justify-content(space-between)
+
 
   .button
     text-align: center
@@ -151,8 +143,12 @@ $tours-vertical-gaps: 30px
   .action-button
     +fill-button-style($main-action-color)
 
-
-.pagination
-  width: 200px
-  margin-left: auto
-  margin-right: auto
+.tours-grid
+  width: 950px
+  height: 1245px
+  margin: 25px auto 30px
+  +display-flex()
+  +flex-direction(row)
+  +flex-wrap(wrap)
+  +justify-content(space-between)
+  +align-content(space-between)
