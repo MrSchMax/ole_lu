@@ -7,9 +7,11 @@ gem 'rails', '4.1.7'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', :github => 'rails/sass-rails', :ref => '423178729e7b84addcee78b33891644b1fc1705b'
-# gem 'sass-rails', '~> 4.0.4'
-gem 'compass-rails'
-
+# gem 'sass-rails', '~> 4.0.5'
+# gem 'compass-rails'
+gem 'bourbon'
+gem 'neat'
+gem 'normalize-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
