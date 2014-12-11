@@ -19,6 +19,9 @@ $main-light-text-color: #FFFFFF
 $main-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2)
 $no-shadow: 0px 0px 0px transparent
 
+$default-font: Lato, $helvetica
+
+
 =fill-button-style($color)
   background: $color
   border-color: $color
@@ -26,24 +29,65 @@ $no-shadow: 0px 0px 0px transparent
     color: $color
     border-color: $color
 
+=pos-tl($top: 0, $left: 0)
+  position: absolute
+  top: $top
+  left: $left
+
+=pos-tr($top: 0, $right: 0)
+  position: absolute
+  top: $top
+  right: $right
+
+=pos-bl($bottom: 0, $left: 0)
+  position: absolute
+  bottom: $bottom
+  left: $left
+
+=pos-br($bottom: 0, $right: 0)
+  position: absolute
+  bottom: $bottom
+  right: $right
+
 *
   +box-sizing(border-box)
+  margin: 0
+
 
 body
   background: $main-body-bg-color
-  font-family: LatoSans
-  // font-weight: 700
+  font:
+    family: $default-font
+    weight: normal
+    style: normal
+
 
 $tours-horizontal-gaps: 40px
 $tours-vertical-gaps: 30px
 $tour-width: 290px
-$tour-height: 395px
+// $tour-height: 395px
 
+.tours-section
+  width: 950px
+  margin: auto
+    top: 25px
+    bottom: 40px
 .card
   background: $main-card-bg-color
   box-shadow: $main-shadow
 
+=grid($width, $horizontal-gaps, $vertical-gaps)
+  font-size: 0
+  width: $width + $horizontal-gaps
+  overflow: hidden
+  margin: (- $vertical-gaps / 2) (- $horizontal-gaps / 2)
+
+  & > .grid-item
+    display: inline-block
+    margin: ($vertical-gaps / 2) ($horizontal-gaps / 2)
+
 .tours-grid
+  +grid(950px, $tours-horizontal-gaps, $tours-vertical-gaps)
 
 .tour-widget
   @extend .card
@@ -56,112 +100,103 @@ $tour-height: 395px
     height: 160px
     overflow: hidden
 
+    .bar
+      min-width: 120px
+      text-align: center
+      line-height: 1em
+      color: $main-light-text-color
+      padding: 3px 8px
+
+
     img
       width: 100%
       margin-top: -10%
-// .tour-widget
-//   @extend .card
-//
-//   +display-flex
-//   +flex-direction(column)
-//   width: $tour-width
-//
-//   .image
-//     position: relative
-//     width: 100%
-//     height: 160px
-//     overflow: hidden
-//
-//     img
-//       width: 100%
-//       margin-top: -10%
-//
-//     .price
-//       position: absolute
-//       right: 0
-//       bottom: 0
-//       min-width: 120px
-//       text-align: center
-//       background: rgba($main-neutral-color,0.85)
-//       font-family: Lato-Italic
-//       font-size: 16px
-//       color: $main-light-text-color
-//       line-height: 19px
-//       padding: 3px 8px
-//
-//   .description
-//     width: 100%
-//     overflow: hidden
-//     padding: 5px 15px
-//
-//     h2
-//       font-family: Lato
-//       font-weight: 900
-//       font-style: italic
-//       text-transform: uppercase
-//       font-size: 16px
-//       color: $main-dark-text-color
-//       line-height: 28px
-//       text-align: center
-//       padding-bottom: 5px
-//       padding-top: 3px
-//       +ellipsis
-//
-//     p
-//       font-family: Lato-Regular
-//       font-size: 15px
-//       color: $secondary-dark-text-color
-//       line-height: 22px
-//       height: 154px
-//       text-align: justify
-//       +ellipsis(false)
-//   .actions
-//     width: 100%
-//     // height: 35px
-//     padding: 5px 15px 8px 15px
-//
-//     +display-flex
-//     +flex-direction(row)
-//     +justify-content(space-between)
-//
-//
-//   .button
-//     text-align: center
-//     text-transform: uppercase
-//     font-family: Lato-Regular
-//     font-size: 14px
-//     line-height: 17px
-//
-//     width: 120px
-//     padding: 0px 10px 1px 10px
-//
-//     border: 2px solid
-//     +border-radius(2px)
-//
-//     color: $main-light-text-color
-//     +transition-property()
-//     +transition-duration(.3s)
-//
-//     &:hover
-//       +box-shadow($main-shadow)
-//
-//     &:active
-//       background: transparent
-//       +box-shadow($no-shadow)
-//
-//   .info-button
-//     +fill-button-style($main-info-color)
-//
-//
-//   .action-button
-//     +fill-button-style($main-action-color)
-//
-// .tours-grid
-//   width: 950px
-//   height: 1245px
-//   margin: 25px auto 30px
-//   +display-flex()
-//   +flex-direction(row)
-//   +flex-wrap(wrap)
-//   +justify-content(space-between)
-//   +align-content(space-between)
+
+    .age
+      +pos-tl
+      @extend .bar
+      background:
+        color: rgba($main-action-color,0.8)
+      font:
+        // style: italic
+        size: 11px
+        weight: 500
+      line-height: 18px
+
+      text:
+        transform: uppercase
+      height: 22px
+
+    .price
+      +pos-br
+      @extend .bar
+      background:
+        color: rgba($main-neutral-color,0.8)
+      font:
+        style: italic
+        size: 16px
+      // line-height: 19px
+
+  .description
+    width: 100%
+    overflow: hidden
+    padding: 5px 15px
+
+    h2
+      color: $main-dark-text-color
+      font:
+        weight: 800
+        style: italic
+        size: 16px
+      line-height: 28px
+      text:
+        transform: uppercase
+        align: center
+      padding-bottom: 3px
+      padding-top: 3px
+
+    p
+      color: $secondary-dark-text-color
+      font:
+        size: 15px
+      line-height: 22px
+      height: 154px
+      text-align: justify
+      // +ellipsis(false)
+
+  .actions
+    width: 100%
+    +display(flex)
+    +flex-direction(row)
+    +justify-content(space-between)
+    padding: 5px 15px 8px 15px
+
+    .button
+      color: $main-light-text-color
+      text:
+        align: center
+        transform: uppercase
+      font-size: 14px
+      line-height: 17px
+
+      width: 120px
+      padding: 1px 10px
+
+      border: 2px solid
+        radius: 2px
+
+      +transition(all .3s)
+
+      &:hover
+        box-shadow: $main-shadow
+
+      &:active
+        background: transparent
+        box-shadow: $no-shadow
+
+    .info-button
+      +fill-button-style($main-info-color)
+
+
+    .action-button
+      +fill-button-style($main-action-color)

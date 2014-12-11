@@ -1,13 +1,34 @@
-.tours-grid
-  tour-widget
-  tour-widget
-  tour-widget
-  tour-widget
-  tour-widget
-  tour-widget
-  tour-widget
-  tour-widget
-  tour-widget
+.tours-section
+  .tours-grid
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+    tour-widget class='grid-item'
+
+/ tour-widget
+/ tour-widget
+/ tour-widget
+/ tour-widget
+/ tour-widget
+/ tour-widget
+/ tour-widget
+
+/ .center-box
+/   .tours.grid
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
+/     tour-widget class='grid-item'
 
 /   .pagination
 /     span назад
