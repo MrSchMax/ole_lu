@@ -1,0 +1,13 @@
+header
+  a href='#/tours' Экскурсии
+  a href='#/contacts' Контакты
+  a href='#/services' Услуги
+  a href='#/reviews' Отзывы
+  a href='#/about' О Нас
+tour-widget
+
+section#tours Экскурсии
+section#contacts Контакты
+section#services Услуги
+section#reviews Отзывы
+section#about О Нас

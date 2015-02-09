@@ -1,2 +1,7 @@
+# App.Router.reopen
+#   location: 'auto'
+#   rootURL: '/'
 App.Router.map ->
-  @resource('tours', path: '/')
+  location: 'auto'
+  rootURL: '/'
+  # @resource('tours', path: '/')

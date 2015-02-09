@@ -6,17 +6,13 @@ gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', :github => 'rails/sass-rails', :ref => '423178729e7b84addcee78b33891644b1fc1705b'
-# gem 'sass-rails', '~> 4.0.5'
-# gem 'compass-rails'
+gem 'sass-rails'
 gem 'bourbon'
-gem 'neat'
-gem 'normalize-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -32,8 +28,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'ember-rails'
-gem 'ember-source'
-gem 'emblem-rails'
+gem 'ember-source', '~> 1.9.0'
+gem 'emblem-rails', '~> 0.2.1'
+gem 'emblem-source', git:'https://github.com/machty/emblem.js.git'
+gem 'barber-emblem', git:'https://github.com/simcha/barber-emblem.git'
 gem 'ember_script-rails'
 gem 'faker'
 gem 'slim-rails'
