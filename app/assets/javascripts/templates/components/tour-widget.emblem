@@ -1,12 +1,30 @@
-.image
-  img src="/assets/img01.jpg"
-  .age начальная школа
-  .price 15 350 РУБ
-.description
-  h2 Вокруг света за один день
-  / span.place
-  / p Экскурсионная Беларусь — это заповедный напев Беловежской пущи, Живописное Поместье Деда Мороза, величественный замок в Мире, всемирно известные мемориалы в Хатыни и Брестской.
-  p.hyphenate lang="ru" Интерактивная путевая экскурсия. Веселая программа «В гостях у Берендея»,  мастер-класс росписи по дереву. «Ботик Петра», Александрова Гора, Спасо-Преображенский собор, загадочный Синий Камень, «Музей утюга», «Музей чайника»
-.actions
-  span.button.info-button.to-left  подробнее
-  span.button.action-button.to-right заказать
+
+
+.title-section
+  .image-with-color-filter
+    img src=image-src
+    .filter
+  / .label.age-label начальная школа
+  .label.age-label {{ageLabel}}
+  .title.hyphenate lang="ru" {{title}}
+  .info-button
+    .text подробнее
+    .icon 
+  .order-button
+    .icon 
+.price-section
+  .price
+    | цена от
+    span.value  {{min-price}}
+    |  руб/чел.
+.geo-section
+  .icon 
+  .places
+    .place
+      span.region Подмосковье,
+      |  Приокско-Террасный заповедник
+    .place
+      span.region Калужская обл,
+      |  «Парк птиц»
+
+.description-section.hyphenate lang="ru" {{description}}

@@ -1,5 +1,6 @@
 #= require ./store
 # = require_tree ./mixins
+# = require_tree ./models
 # = require_tree ./helpers
 # = require_tree ./components
 #= require_tree ./templates

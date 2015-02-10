@@ -1,44 +1,25 @@
+div
+  each tour in model
+    p
+      | {{tour.title}} {{tour.description}} {{tour.minPrice}}
+    each age in tour.ages
+      | {{age}}
+
+
+
+
+
+
 .tours-section
-  .tours-grid
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-    tour-widget class='grid-item'
-
-/ tour-widget
-/ tour-widget
-/ tour-widget
-/ tour-widget
-/ tour-widget
-/ tour-widget
-/ tour-widget
-
-/ .center-box
-/   .tours.grid
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-/     tour-widget class='grid-item'
-
-/   .pagination
-/     span назад
-/     span 1
-/     span …
-/     span 3
-/     span.current 4
-/     span 5
-/     span 6
-/     span …
-/     span 10
-/     span вперёд
-/ /
+  each tour in model
+    tour-widget title=tour.title min-price=tour.minPrice description=tour.description image-src="/assets/img01.jpg" ages=tour.ages
+  / .tours-grid
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
+  /   tour-widget class='grid-item'
