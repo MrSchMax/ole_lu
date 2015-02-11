@@ -1,18 +1,8 @@
-div
-  each tour in model
-    p
-      | {{tour.title}} {{tour.description}} {{tour.minPrice}}
-    each age in tour.ages
-      | {{age}}
-
-
-
-
-
-
 .tours-section
-  each tour in model
-    tour-widget title=tour.title min-price=tour.minPrice description=tour.description image-src="/assets/img01.jpg" ages=tour.ages
+  .tours-grid
+    each tour in model
+      / link-to tour
+      tour-widget class='grid-item' link-totitle=tour.title min-price=tour.minPrice description=tour.description image-src="/assets/img01.jpg" ages=tour.ages
   / .tours-grid
   /   tour-widget class='grid-item'
   /   tour-widget class='grid-item'

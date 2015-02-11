@@ -4,4 +4,5 @@ App.Router.reopen
 App.Router.map ->
   # location: 'auto'
   # rootURL: '/'
-  @resource 'tours', path: '/'
+  @resource 'tours', path: '/', ->
+    @resource 'tour', path: '/tours/:id'

@@ -1,0 +1,18 @@
+.tours-section
+  width: 950px
+  margin: auto
+  margin-top: 25px
+  margin-bottom: 40px
+
+=grid($width, $horizontal-gaps, $vertical-gaps)
+  font-size: 0
+  width: $width + $horizontal-gaps
+  overflow: hidden
+  margin: (- $vertical-gaps / 2) (- $horizontal-gaps / 2)
+
+  & > .grid-item
+    display: inline-block
+    margin: ($vertical-gaps / 2) ($horizontal-gaps / 2)
+
+.tours-grid
+  +grid(950px, 25px, 25px)

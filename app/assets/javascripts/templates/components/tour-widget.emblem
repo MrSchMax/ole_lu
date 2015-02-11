@@ -10,8 +10,8 @@
   .info-button
     .text подробнее
     .icon 
-  .order-button
-    .icon 
+  / .order-button
+  /   .icon 
 .price-section
   .price
     | цена от
