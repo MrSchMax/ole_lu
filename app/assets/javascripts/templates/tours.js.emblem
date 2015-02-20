@@ -1,8 +1,9 @@
+/ link-to
 .tours-section
   .tours-grid
     each tour in model
-      / link-to tour
-      tour-widget class='grid-item' link-totitle=tour.title min-price=tour.minPrice description=tour.description image-src="/assets/img01.jpg" ages=tour.ages
+      / link-to 'tour' tour
+      tour-widget class='grid-item' title=tour.title min-price=tour.minPrice description=tour.description image-src="/assets/img01.jpg" ages=tour.ages id=tour.id action1='linkToTour' onClick="linkToTour2"
   / .tours-grid
   /   tour-widget class='grid-item'
   /   tour-widget class='grid-item'

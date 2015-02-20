@@ -1,6 +1,7 @@
 class App.TourWidgetComponent extends Ember.Component
   classNames: ['tour-widget']
   ages: []
+  sending: true
 
   +computed ages
   ageLabel: ->
@@ -17,10 +18,11 @@ class App.TourWidgetComponent extends Ember.Component
       when 6 then return "старший возраст"
       else return "подходит всем"
 
-    # if @ages.length == 0 return "подходит всем"
-    # if @ages.length == 1
-    #   if "children" in @ages then return "начальная школа"
-    #   if "middle" in @ages then return "средняя школа"
-    #   if "adult" in @ages then return "для взрослых"
-    # # if @ages.length ==
-    # return "подходит всем"
+  click: ->
+    if @sending then @sendAction('action1', @id) else @sending = true
+
+  actions:
+    linkToTour: ->
+      # @sending = false
+      # console.log @id
+      @sendAction('action1', @id)

@@ -1,6 +1,7 @@
 
 
 App.Tour = DS.Model.extend
+  imageSrc:       DS.attr 'string'
   title:       DS.attr 'string'
   description: DS.attr 'string'
   ages:        DS.attr 'array'
@@ -71,4 +72,24 @@ App.Tour.FIXTURES = [
 App.ToursRoute = Ember.Route.extend
   model: ->
     @store.find 'tour'
+  actions :
+    linkToTour: (tour_id) ->
+      # @transitionTo '/tours/#{tour_id }'
+      @transitionTo('/tours/' + tour_id)
+      console.log(tour_id)
+    linkToTour2: () ->
+      # @transitionTo '/tours/#{tour_id }'
+      @transitionTo('/tours/' + 1)
+      console.log(tour_id)
+      # @transitionTo('/tours/1')
+# App.TourRoute = Ember.Route.extend
+#   model: (params)->
+#     @store.find 'tour', params.id
+App.TourIndexRoute = Ember.Route.extend
+  model: (params)->
+    @store.find 'tour', params.id
+
 # App.ToursController = Ember.ArrayController.extend
+
+
+# App.TourController = Ember.ObjectController.extend
